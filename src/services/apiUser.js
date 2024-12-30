@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthProvider";
 
 export const getUser = async (id) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/${id}`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/${id}`;
 
     const response = await axios({
       method: "get",
@@ -23,7 +23,7 @@ export const getUser = async (id) => {
 
 export const loginAPI = async ({ email, password }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/login`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/login`;
 
     const response = await axios({
       method: "post",
@@ -48,7 +48,7 @@ export const loginAPI = async ({ email, password }) => {
 
 export const signupAPI = async (data) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/signup`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/signup`;
 
     const response = await axios({
       method: "post",
@@ -73,7 +73,9 @@ export const signupAPI = async (data) => {
 
 export const forgotPasswordAPI = async (email) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/forgotPassword`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/users/forgotPassword`;
     const response = await axios({
       method: "post",
       url: url,
@@ -101,7 +103,9 @@ export const resetPasswordAPI = async ({
   token,
 }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/resetPassword/${token}`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/users/resetPassword/${token}`;
     const response = await axios({
       method: "post",
       url: url,
@@ -131,7 +135,9 @@ export const updatePasswordAPI = async ({
   token,
 }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/updatePassword`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/users/updatePassword`;
     const response = await axios({
       method: "patch",
       url: url,
@@ -160,7 +166,7 @@ export const updatePasswordAPI = async ({
 
 export const updateUserAPI = async ({ data, token }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/updateUser`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/updateUser`;
     const response = await axios({
       method: "patch",
       url: url,
@@ -185,7 +191,9 @@ export const updateUserAPI = async ({ data, token }) => {
 
 export const authAPI = async () => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/users/isAuthenticated`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/users/isAuthenticated`;
 
     const response = await axios({
       method: "get",

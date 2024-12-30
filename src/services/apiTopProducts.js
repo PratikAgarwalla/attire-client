@@ -7,7 +7,7 @@ export const getTopPicks = async (
 ) => {
   try {
     // Construct the URL with protocol and dynamic parameters
-    const url = `http://127.0.0.1:8000/api/v1/products/topPicks/${
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/products/topPicks/${
       category || ""
     }/${mainCategory || ""}`;
 
@@ -33,9 +33,9 @@ export const getTopPicks = async (
 export const getProducts = async (category = "", mainCategory = "") => {
   try {
     // Construct the URL with protocol and dynamic parameters
-    const url = `http://127.0.0.1:8000/api/v1/products/collection/${
-      category || ""
-    }/${mainCategory || ""}`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/products/collection/${category || ""}/${mainCategory || ""}`;
 
     const response = await axios({
       method: "get",
@@ -56,7 +56,7 @@ export const getProducts = async (category = "", mainCategory = "") => {
 export const getProduct = async (id) => {
   try {
     // Construct the URL with protocol and dynamic parameters
-    const url = `http://127.0.0.1:8000/api/v1/products/${id}`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/products/${id}`;
 
     const response = await axios({
       method: "get",
@@ -76,9 +76,9 @@ export const getProduct = async (id) => {
 
 export const getManyProduct = async (productIds) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/products?ids=${productIds.join(
-      ","
-    )}`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/products?ids=${productIds.join(",")}`;
 
     const response = await axios({
       method: "get",

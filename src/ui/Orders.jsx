@@ -77,24 +77,21 @@ function Orders() {
   } = useQuery({
     queryKey: ["orders"],
     queryFn: () => getOrdersAPI({ token }),
-    staleTime: 0, // Forces immediate refetching
-    enabled: !!token, // Only runs query if token is available
+    staleTime: 0,
+    enabled: !!token,
   });
 
-  // UseEffect to refetch orders when auth token updates
   useEffect(() => {
     if (token) {
-      refetch(); // Refetch orders if token changes
+      refetch();
     }
   }, [token, refetch]);
 
-  // Function to format date in the desired format (e.g., "11-Nov-2012")
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "short", day: "numeric" };
     return new Date(dateString).toLocaleDateString("en-GB", options);
   };
 
-  // Group orders by date
   const groupedOrders = orders?.reduce((acc, order) => {
     const date = formatDate(order.date);
     if (!acc[date]) {
@@ -121,8 +118,16 @@ function Orders() {
                       <ProductImage
                         src={
                           product.productId.category === "wetsuits"
-                            ? `/${product.productId.category}/${product.productId.mainCategory}/${product.productId._id}-pic1.png`
-                            : `/${product.productId.category}/${product.productId.mainCategory}/${product.productId.subCategory}/${product.productId._id}-pic1.png`
+                            ? `${import.meta.env.VITE_BACKEND_URL}/${
+                                product.productId.category
+                              }/${product.productId.mainCategory}/${
+                                product.productId._id
+                              }-pic1.png`
+                            : `${import.meta.env.VITE_BACKEND_URL}/${
+                                product.productId.category
+                              }/${product.productId.mainCategory}/${
+                                product.productId.subCategory
+                              }/${product.productId._id}-pic1.png`
                         }
                         alt={product.name}
                       />

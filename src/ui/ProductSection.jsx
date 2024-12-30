@@ -25,23 +25,27 @@ function ProductSection() {
       <Heading>Our Categories</Heading>
       <ProductCategory>
         <ProductCard
-          imageUrl="CategoryClothing.png"
+          imageUrl={`${import.meta.env.VITE_BACKEND_URL}/CategoryClothing.png`}
           title="Clothing"
           link="clothing"
         />
         <ProductCard
-          imageUrl="CategoryShoes.png"
+          imageUrl={`${import.meta.env.VITE_BACKEND_URL}/CategoryShoes.png`}
           title="Shoes & Sandals"
           link="footwear"
         />
         <ProductCard
-          imageUrl="CategoryCaps.png"
+          imageUrl={`${import.meta.env.VITE_BACKEND_URL}/CategoryCaps.png`}
           title="Accessories"
           link="accessories"
         />
-        <ProductCard imageUrl="CategoryJeans.png" title="Jeans" link="jeans" />
         <ProductCard
-          imageUrl="CategoryWinter.png"
+          imageUrl={`${import.meta.env.VITE_BACKEND_URL}/CategoryJeans.png`}
+          title="Jeans"
+          link="jeans"
+        />
+        <ProductCard
+          imageUrl={`${import.meta.env.VITE_BACKEND_URL}/CategoryWinter.png`}
           title="Coats & Winterwear"
           link="winterwear"
         />

@@ -149,8 +149,6 @@ function AddressModal({ onClose, addressId }) {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
-
     const currentAddresses = auth?.user?.addresses || [];
 
     if (addressId) {

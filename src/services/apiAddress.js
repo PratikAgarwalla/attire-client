@@ -3,7 +3,8 @@ import axios from "axios";
 export const addAddressAPI = async ({ address, token }) => {
   console.log(address, token);
   try {
-    const url = `http://127.0.0.1:8000/api/v1/address/addAddress`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/address/addAddress`;
+    console.log(url);
     const response = await axios({
       method: "post",
       url: url,
@@ -29,7 +30,9 @@ export const addAddressAPI = async ({ address, token }) => {
 
 export const updateAddressAPI = async ({ address, token }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/address/updateAddress`;
+    const url = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/api/v1/address/updateAddress`;
     const response = await axios({
       method: "patch",
       url: url,

@@ -71,7 +71,10 @@ function Wetsuits() {
 
   return (
     <>
-      <Banner imageUrl="/wetsuitbanner.jpg" title="wetsuits" />
+      <Banner
+        imageUrl={`${import.meta.env.VITE_BACKEND_URL}/wetsuitbanner.jpg`}
+        title="wetsuits"
+      />
       {isLoading && (
         <CenteredContainer>
           <Spinner />

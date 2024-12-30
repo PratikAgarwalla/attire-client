@@ -8,7 +8,7 @@ export const addItemAPI = async ({
   token,
 }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/cart/addItem`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/cart/addItem`;
     const response = await axios({
       method: "post",
       url: url,
@@ -37,7 +37,7 @@ export const addItemAPI = async ({
 
 export const updateCartAPI = async ({ cartItems, token }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/cart/updateCart`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/cart/updateCart`;
     const response = await axios({
       method: "patch",
       url: url,
@@ -61,7 +61,7 @@ export const updateCartAPI = async ({ cartItems, token }) => {
 
 export const clearCartAPI = async ({ token }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/cart/clearCart`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/cart/clearCart`;
     const response = await axios({
       method: "delete",
       url: url,

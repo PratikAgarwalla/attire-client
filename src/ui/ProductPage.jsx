@@ -252,9 +252,13 @@ function ProductPage() {
 
   let imageUrl = "";
   if (category === "wetsuits") {
-    imageUrl = `/${category}/${mainCategory}`;
+    imageUrl = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/${category}/${mainCategory}`;
   } else {
-    imageUrl = `/${category}/${mainCategory}/${subCategory}`;
+    imageUrl = `${
+      import.meta.env.VITE_BACKEND_URL
+    }/${category}/${mainCategory}/${subCategory}`;
   }
 
   const { auth, setAuth } = useAuth();

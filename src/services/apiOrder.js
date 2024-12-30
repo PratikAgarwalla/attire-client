@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const createOrderAPI = async ({ token, data }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/order/createOrder`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/order/createOrder`;
     const response = await axios({
       method: "post",
       url: url,
@@ -26,7 +26,7 @@ export const createOrderAPI = async ({ token, data }) => {
 
 export const getOrdersAPI = async ({ token }) => {
   try {
-    const url = `http://127.0.0.1:8000/api/v1/order/getOrders`;
+    const url = `${import.meta.env.VITE_BACKEND_URL}/api/v1/order/getOrders`;
     const response = await axios({
       method: "get",
       url: url,

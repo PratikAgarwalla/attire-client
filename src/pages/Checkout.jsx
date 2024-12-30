@@ -198,17 +198,6 @@ function Checkout() {
     queryFn: () => getManyProduct(productIds),
   });
 
-  // const { mutate: clearCart, isPending: isClearing } = useMutation({
-  //   mutationFn: ({ token }) => clearCartAPI({ token }),
-  //   onSuccess: (data) => {
-  //     setAuth((prevAuth) => ({ ...prevAuth, user: data.data.user }));
-  //     toast.success("cart cleared successfully");
-  //   },
-  //   onError: (err) => {
-  //     toast.error(err.message);
-  //   },
-  // });
-
   const { mutate: createOrder, isPending: isCreating } = useMutation({
     mutationFn: ({ token, data }) => createOrderAPI({ token, data }),
     onSuccess: (data) => {
@@ -238,8 +227,6 @@ function Checkout() {
     return { ...product, ...detailsWithoutPrice };
   });
 
-  console.log(mergedProducts);
-
   const orderedProducts = mergedProducts.map((product) => {
     return {
       productId: product.productId,
@@ -263,7 +250,6 @@ function Checkout() {
       toast.error("Please select an address");
       return;
     }
-    // clearCart({ token });
     createOrder({ token, data: ordersData });
     toast.success("Order placed successfully");
     navigate("/orderPlaced", { replace: true });
@@ -327,8 +313,14 @@ function Checkout() {
                   <ProductImage
                     src={
                       product.category === "wetsuits"
-                        ? `/${product.category}/${product.mainCategory}/${product._id}-pic1.png`
-                        : `/${product.category}/${product.mainCategory}/${product.subCategory}/${product._id}-pic1.png`
+                        ? `${import.meta.env.VITE_BACKEND_URL}/${
+                            product.category
+                          }/${product.mainCategory}/${product._id}-pic1.png`
+                        : `${import.meta.env.VITE_BACKEND_URL}/${
+                            product.category
+                          }/${product.mainCategory}/${product.subCategory}/${
+                            product._id
+                          }-pic1.png`
                     }
                     alt={product.name}
                   />
