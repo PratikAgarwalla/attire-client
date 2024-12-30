@@ -28,6 +28,7 @@ const Input = styled.input`
   width: 100%;
   padding: 1rem;
   border-radius: 5px;
+  line-height: 1.6;
   border: 1px solid var(--dark-grey-2);
   max-width: 400px; /* Set a max-width for inputs to prevent them from taking the entire width */
 `;

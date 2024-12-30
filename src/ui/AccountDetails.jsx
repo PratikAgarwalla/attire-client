@@ -73,6 +73,7 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 `;
 
 const ButtonBox = styled.div`

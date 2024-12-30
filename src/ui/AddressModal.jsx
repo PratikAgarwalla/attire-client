@@ -57,6 +57,7 @@ const Input = styled.input`
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
+  line-height: 1.6;
 `;
 
 const Select = styled.select`

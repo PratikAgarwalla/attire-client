@@ -7,12 +7,27 @@ import { loginAPI } from "../services/apiUser";
 import MiniSpinner from "../ui/MiniSpinner";
 import { useAuth } from "../context/AuthProvider";
 
+// Styled Components
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column; /* Center the content vertically */
+`;
+
+const TopBanner = styled.div`
+  background-color: #f1f1f1; /* Soft light gray background */
+  color: #333333; /* Darker gray text */
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem; /* Reduced margin for better layout */
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0; /* Light border for a subtle separation */
 `;
 
 const LoginBox = styled.form`
@@ -133,8 +148,8 @@ const Btn = styled(Link)`
 
 function Login() {
   const { setAuth } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("demouser@attire.com"); // Default email
+  const [password, setPassword] = useState("demo1234"); // Default password
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -173,6 +188,13 @@ function Login() {
 
   return (
     <Container>
+      <TopBanner>
+        Login with the following credentials:
+        <br />
+        Email: <strong>demouser@attire.com</strong>, Password:{" "}
+        <strong>demo1234</strong>
+      </TopBanner>
+
       <LoginBox onSubmit={handleSubmit}>
         <LogoBox>
           <Logo src="/logo-black.png" />

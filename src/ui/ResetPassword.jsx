@@ -43,6 +43,7 @@ const Input = styled.input`
   width: 100%;
   padding: 1rem;
   border-radius: 5px;
+  line-height: 1.6;
   border: 1px solid currentColor;
 `;
 
