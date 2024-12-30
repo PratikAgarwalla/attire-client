@@ -103,47 +103,6 @@ const DeleteButton = styled.button`
   }
 `;
 
-// Dummy address data
-const addressesDat = [
-  {
-    id: 1,
-    name: "Murali Reddy",
-    phone: "6655443322",
-    country: "India",
-    state: "Nagaland",
-    pincode: "632014",
-    city: "Chennai",
-    houseno: "78",
-    street: "Malyapore",
-    landmark: "near washroom",
-  },
-  {
-    id: 2,
-    name: "Rajesh Kumar",
-    phone: "9876543210",
-    country: "India",
-    state: "Maharashtra",
-    pincode: "400001",
-    city: "Mumbai",
-    houseno: "24",
-    street: "Marine Drive",
-    landmark: "near beach",
-  },
-  {
-    id: 3,
-    name: "Sita Sharma",
-    phone: "6677889900",
-    country: "India",
-    state: "Uttar Pradesh",
-    pincode: "201301",
-    city: "Noida",
-    houseno: "35",
-    street: "Sector 15",
-    landmark: "near metro station",
-  },
-  // Add more dummy addresses here
-];
-
 function Addresses() {
   const { auth, setAuth } = useAuth();
   const addressesData = auth && auth.user.addresses ? auth.user.addresses : [];
