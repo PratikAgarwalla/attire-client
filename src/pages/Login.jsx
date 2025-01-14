@@ -197,7 +197,7 @@ function Login() {
 
       <LoginBox onSubmit={handleSubmit}>
         <LogoBox>
-          <Logo src="/logo-black.png" />
+          <Logo src="https://raw.githubusercontent.com/Pratik-Agarwalla/attire-images/main/logo-black.png" />
         </LogoBox>
         {error && (
           <ErrorBox>
