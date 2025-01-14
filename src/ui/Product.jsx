@@ -135,7 +135,10 @@ function Product({ product }) {
         {sale && <Sale>Sale</Sale>}
         {discount > 0 && <Discount>-{discount}%</Discount>}
         <Button>Quick Add</Button>
-        <Image src={`${imageUrl}/${id}-pic1.png`} />
+        {/* <Image src={`${imageUrl}/${id}-pic1.png`} /> */}
+        <Image
+          src={`https://github.com/PratikAgarwalla/the-wild-oasis/blob/main/public/logo-dark.png`}
+        />
       </ImageBox>
       <ContentBox>
         <Title>{title}</Title>
