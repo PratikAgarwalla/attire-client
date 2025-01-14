@@ -137,7 +137,7 @@ function Product({ product }) {
         <Button>Quick Add</Button>
         {/* <Image src={`${imageUrl}/${id}-pic1.png`} /> */}
         <Image
-          src={`https://github.com/PratikAgarwalla/the-wild-oasis/blob/main/public/logo-dark.png`}
+          src={`https://raw.githubusercontent.com/PratikAgarwalla/the-wild-oasis/main/public/logo-dark.png`}
         />
       </ImageBox>
       <ContentBox>
