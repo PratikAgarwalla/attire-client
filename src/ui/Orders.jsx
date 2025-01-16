@@ -118,12 +118,12 @@ function Orders() {
                       <ProductImage
                         src={
                           product.productId.category === "wetsuits"
-                            ? `${import.meta.env.VITE_BACKEND_URL}/${
+                            ? `${import.meta.env.VITE_IMAGE_URL}/${
                                 product.productId.category
                               }/${product.productId.mainCategory}/${
                                 product.productId._id
                               }-pic1.png`
-                            : `${import.meta.env.VITE_BACKEND_URL}/${
+                            : `${import.meta.env.VITE_IMAGE_URL}/${
                                 product.productId.category
                               }/${product.productId.mainCategory}/${
                                 product.productId.subCategory
