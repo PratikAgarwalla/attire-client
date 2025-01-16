@@ -104,12 +104,10 @@ function CartItem({ product, onUpdateQuantity, onRemoveItem }) {
 
   let imageUrl = "";
   if (category === "wetsuits") {
-    imageUrl = `${
-      import.meta.env.VITE_BACKEND_URL
-    }/${category}/${mainCategory}`;
+    imageUrl = `${import.meta.env.VITE_IMAGE_URL}/${category}/${mainCategory}`;
   } else {
     imageUrl = `${
-      import.meta.env.VITE_BACKEND_URL
+      import.meta.env.VITE_IMAGE_URL
     }/${category}/${mainCategory}/${subCategory}`;
   }
 

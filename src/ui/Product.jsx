@@ -120,12 +120,10 @@ function Product({ product }) {
   let imageUrl = "";
 
   if (category == "wetsuits") {
-    imageUrl = `${
-      import.meta.env.VITE_BACKEND_URL
-    }/${category}/${mainCategory}`;
+    imageUrl = `${import.meta.env.VITE_IMAGE_URL}/${category}/${mainCategory}`;
   } else {
     imageUrl = `${
-      import.meta.env.VITE_BACKEND_URL
+      import.meta.env.VITE_IMAGE_URL
     }/${category}/${mainCategory}/${subCategory}`;
   }
 
@@ -135,10 +133,7 @@ function Product({ product }) {
         {sale && <Sale>Sale</Sale>}
         {discount > 0 && <Discount>-{discount}%</Discount>}
         <Button>Quick Add</Button>
-        {/* <Image src={`${imageUrl}/${id}-pic1.png`} /> */}
-        <Image
-          src={`https://raw.githubusercontent.com/PratikAgarwalla/the-wild-oasis/main/public/logo-dark.png`}
-        />
+        <Image src={`${imageUrl}/${id}-pic1.png`} />
       </ImageBox>
       <ContentBox>
         <Title>{title}</Title>

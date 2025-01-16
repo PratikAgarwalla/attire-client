@@ -7,7 +7,7 @@ const LogoImg = styled.img`
 `;
 
 function Logo() {
-  return <LogoImg src="logo-black.png" alt="logo" />;
+  return <LogoImg src="/logo-black.png" alt="logo" />;
 }
 
 export default Logo;

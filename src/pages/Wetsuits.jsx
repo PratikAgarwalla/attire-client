@@ -72,7 +72,7 @@ function Wetsuits() {
   return (
     <>
       <Banner
-        imageUrl={`${import.meta.env.VITE_BACKEND_URL}/wetsuitbanner.jpg`}
+        imageUrl={`${import.meta.env.VITE_IMAGE_URL}/wetsuitbanner.jpg`}
         title="wetsuits"
       />
       {isLoading && (

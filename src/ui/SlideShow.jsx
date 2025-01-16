@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // Sample data array for the slideshow
 const slides = [
   {
-    src: `${import.meta.env.VITE_BACKEND_URL}/slide2.png`,
+    src: `${import.meta.env.VITE_IMAGE_URL}/slide2.png`,
     title: "See you in the lineup",
     subTitle:
       "Gear up for your next surf session with our premium wetsuits and accessories.",
     buttons: [{ name: "Shop wetsuits", link: "/wetsuits" }],
   },
   {
-    src: `${import.meta.env.VITE_BACKEND_URL}/slide1.png`,
+    src: `${import.meta.env.VITE_IMAGE_URL}/slide1.png`,
     title: "Autumn Fits",
     subTitle: "Check out the new autumn attires for both men and women.",
     buttons: [
